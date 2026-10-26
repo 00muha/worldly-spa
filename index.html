@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word Finder – Dictionary SPA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Word Finder</h1>
+      <p>Look up any English word to see its meaning, pronunciation and synonyms.</p>
+    </header>
+
+    <!-- Search form -->
+    <form id="search-form" class="search-form" role="search" aria-label="Dictionary search">
+      <label for="word-input" class="visually-hidden">Enter a word</label>
+      <input
+        type="text"
+        id="word-input"
+        name="word"
+        placeholder="Type a word, e.g. serendipity"
+        autocomplete="off"
+        aria-describedby="status"
+      />
+      <button type="submit" id="search-btn" aria-label="Search for the word">Search</button>
+    </form>
+
+    <!-- Status messages (loading / errors) -->
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <!-- Results -->
+    <section id="results" class="results" aria-label="Search results" hidden>
+      <div class="word-row">
+        <div>
+          <h2 id="result-word"></h2>
+          <p id="result-phonetic" class="phonetic"></p>
+        </div>
+        <button id="audio-btn" class="audio-btn" aria-label="Play pronunciation" hidden>
+          &#9654; Listen
+        </button>
+      </div>
+
+      <audio id="audio-player" preload="none"></audio>
+
+      <div id="meanings" class="meanings"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
